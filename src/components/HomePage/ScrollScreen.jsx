@@ -4,19 +4,23 @@
 // 4. 此组件与HomePage联动
 // 5. 两个箭头和文字介绍同时滑动，最好保持箭头不动呢 ✅
 
+import { useDispatch, useSelector } from 'react-redux';
 import classes from './ScrollScreen.module.css'
 
-export default function ScrollScreen({ images, curInd }) {
+const selectHomeImages = state => state.homeImages;
 
-    function leftArrowHandle() { }
+export default function ScrollScreen() {
+    const { images, totals, currentImage } = useSelector(selectHomeImages);
+    const dispatch = useDispatch();
 
-    function rightArrowHandle() { }
+    function leftArrowHandle() { dispatch({ type: 'left' }) }
+    function rightArrowHandle() { dispatch({ type: 'right' }) }
 
     // 实现图片移动的关键 ✔
     let moveImage = {
-        transform: `translateX(-${curInd * 100}%)`,
+        transform: `translateX(-${currentImage * 100}%)`,
         transition: 'transform 0.5s ease',
-        width: `${images.length * 100}%`
+        width: `${totals * 100}%`
     };
 
     return (

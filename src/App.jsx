@@ -1,13 +1,13 @@
 import './App.css'
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Nav from './pages/Nav'
-import Homepage from './pages/Homepage'
-import Recap from './pages/Recap'
-import Footprint from './pages/Footprint'
-import Projects from './pages/Projects'
-import About from './pages/About'
+import Nav from './pages/Nav.jsx'
+import Homepage from './pages/Homepage.jsx'
+import Recap from './pages/Recap.jsx'
+import Footprint from './pages/Footprint.jsx'
+import Projects from './pages/Projects.jsx'
+import About from './pages/About.jsx'
+
 
 const router = createBrowserRouter([
   {
