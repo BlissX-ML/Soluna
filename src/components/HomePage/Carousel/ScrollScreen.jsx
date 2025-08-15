@@ -63,6 +63,18 @@ export default function ScrollScreen() {
         width: `${totals * 100}%`
     };
 
+    useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (document.hidden) stopAutoPlay();
+            else if (!paused) startAutoPlay();
+        }
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        return () => {
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, [paused, stopAutoPlay, startAutoPlay])
+
     return (
         // `flex` 与 `hidden` 是必要的 ✔✔✔
         <main className={classes.carousel} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
