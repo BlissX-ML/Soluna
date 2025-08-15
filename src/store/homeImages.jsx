@@ -1,36 +1,39 @@
-const SCROLL_IMAGES = [
-    {
-        key: 'image_1',
-        title: 'Grass',
-        src: './images/homepage/screen1.jpg',
-        description: 'This is a beautiful place.'
-    },
-    {
-        key: 'image_2',
-        title: 'Dogs',
-        src: './images/homepage/screen2.png',
-        description: 'Freedom??!!'
-    }
-];
+import { SCROLL_IMAGES } from "../Data/homePage";
+
+const extendedImages = [...SCROLL_IMAGES, SCROLL_IMAGES[0]];
 
 const initialState = {
-    images: SCROLL_IMAGES,
-    totals: SCROLL_IMAGES.length,
+    images: extendedImages,
+    totals: extendedImages.length,   // 添加一个副件的数组长度
     currentImage: 0
 }
 
 export function homeImagesReducer(state = initialState, action) {
     if (action.type === 'right') {
-        return {
-            ...state,
-            currentImage: (state.currentImage + 1) % SCROLL_IMAGES.length
+        if (state.currentImage === state.totals - 1) {
+            return { ...state }
         }
+        return { ...state, currentImage: state.currentImage + 1 }
+
     }
 
     if (action.type === 'left') {
+        if (state.currentImage === 0) {
+            return {
+                ...state,
+                currentImage: state.currentImage - 2
+            }
+        }
         return {
             ...state,
-            currentImage: (state.currentImage - 1 + SCROLL_IMAGES.length) % SCROLL_IMAGES.length
+            currentImage: state.currentImage - 1
+        }
+    }
+
+    if (action.type === 'jump') {
+        return {
+            ...state,
+            currentImage: 0
         }
     }
 
