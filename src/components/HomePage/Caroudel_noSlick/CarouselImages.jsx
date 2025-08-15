@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import classes from './ScrollScreen.module.css'
+import classes from './CarouselImages.module.css'
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import ArrowImages from './Arrow';
@@ -7,7 +7,7 @@ import ImagesLoop from './ImagesLoop';
 
 const selectHomeImages = state => state.homeImages;
 
-export default function ScrollScreen() {
+export default function CarouselImages() {
     const [paused, setPaused] = useState(false);   // 控制自动轮播
     const timerRef = useRef(null);                 // 控制轮播计时器是否暂停
 

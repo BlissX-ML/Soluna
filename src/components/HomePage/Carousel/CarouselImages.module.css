@@ -1,0 +1,70 @@
+/* 统一边距与箭头尺寸 */
+:root{
+  --carousel-gutter: .8rem;     /* 你的左右内边距 */
+  --arrow-box: 40px;            /* 按钮盒子(点击区域) */
+  --arrow-icon: 24px;           /* 箭头图标大小 */
+  --carousel-dots: .8rem;
+}
+
+/* 让 slick-list 成为定位参考（更稳） */
+:global(.slick-list){ position: relative; }
+
+/* 覆盖 slick 默认箭头定位（保留其样式，只调位置与尺寸） */
+:global(.slick-prev),
+:global(.slick-next){
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: var(--arrow-size) !important;
+  height: var(--arrow-size) !important;
+  display: flex;                /* 让伪元素在盒子里居中 */
+  align-items: center;
+  justify-content: center;
+}
+
+/* 关键：用“边距 - 箭头半宽”对齐到内容条边界的中心线 */
+:global(.slick-prev){ left: var(--carousel-gutter) !important; }
+:global(.slick-next){ right: var(--carousel-gutter) !important; }
+
+/* 保留默认外观，只调大小/颜色随意 */
+:global(.slick-prev:before),
+:global(.slick-next:before){
+  font-size: var(--arrow-icon) !important;
+  line-height: 1;
+  color: #fff;      /* 或 #333 */
+}
+
+:global(.slick-dots) {
+    bottom: var(--carousel-dots) !important;
+}
+
+/* 避免其他样式干扰造成假不对称 */
+:global(.slick-slider), :global(.slick-list), :global(.slick-track){ margin:0; }
+
+
+.screen {
+  width: 100%;
+  height: 25rem;            /* 你需要多高就设多高 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(242, 242, 242, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.des { line-height: 1.6; }
+.des > p { font-size: 11px; }
+
