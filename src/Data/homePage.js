@@ -18,3 +18,8 @@ export const SCROLL_IMAGES = [
         description: 'Just beautiful?'
     }
 ];
+
+export const ICONS = {
+    eyeOpen: './images/icons/eye.svg',
+    eyeClose: './images/icons/eye-close.svg'
+}

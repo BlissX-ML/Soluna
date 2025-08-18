@@ -45,7 +45,7 @@
 
 .screen {
   width: 100%;
-  height: 25rem;            /* 你需要多高就设多高 */
+  height: calc(100vh - 60px);            /* 你需要多高就设多高 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
