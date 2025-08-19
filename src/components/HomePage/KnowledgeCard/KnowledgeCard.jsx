@@ -1,11 +1,12 @@
-import { useState } from 'react'
 import classes from './KnowledgeCard.module.css'
-import { ICONS } from '../../../Data/homePage';
+
 import Titles from '../Titles';
+import CardAnswer from './CardAnswer';
+import { useState } from 'react';
+import CardAsk from './CardAsk';
 
 export default function KnowledgeCard() {
     const [visibility, setVisibility] = useState(false);
-
     function handleBtnVisible() { setVisibility(!visibility) }
 
     return (
@@ -17,24 +18,19 @@ export default function KnowledgeCard() {
                     <h3>每日一问</h3>
                     <p>Are you ready to answer today&apos;s question?</p>
                 </div>
+
                 <div className={classes.right}>
-                    <p className={classes.ask}>
-                        <h3>隐藏 HTML 元素的方法?</h3>
-                        <button onClick={handleBtnVisible} className={classes.btn}>
-                            {visibility && <img src={ICONS.eyeOpen} />}
-                            {!visibility && <img src={ICONS.eyeClose} />}
-                        </button>
-                    </p>
+                    <CardAsk
+                        ask={classes.ask}
+                        btn={classes.btn}
+                        visibleState={visibility}
+                        visibleHandle={handleBtnVisible}
+                    />
 
                     <div className={visibility ? `${classes.answer} ${classes.show}` : `${classes.answer}`}>
-                        <div className={classes.detailedAns}>
-                            <p>1. CSS: `display` 属性</p>
-                            <p>2. CSS: `visibility` 属性</p>
-                            <p>3. CSS: `opacity` 属性 + `pointer-events: none`</p>
-                            <p>4. position 移出视口</p>
-                            <p>5. clip-path 裁剪</p>
-                            <p>……</p>
-                        </div>
+                        <CardAnswer
+                            ans={classes.detailedAns}
+                        />
                     </div>
                 </div>
             </main>

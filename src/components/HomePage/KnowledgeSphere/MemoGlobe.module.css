@@ -1,0 +1,6 @@
+.memoGlobe {
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem 3rem;
+    padding: 1.5rem;
+}

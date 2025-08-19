@@ -7,6 +7,7 @@ import Recap from './pages/Recap.jsx'
 import Footprint from './pages/Footprint.jsx'
 import Projects from './pages/Projects.jsx'
 import About from './pages/About.jsx'
+import RecapDetailed from './pages/RecapDetailed'
 
 
 const router = createBrowserRouter([
@@ -15,7 +16,13 @@ const router = createBrowserRouter([
     element: <Nav />,
     children: [
       { index: true, element: <Homepage /> },
-      { path: 'recap', element: <Recap /> },
+      {
+        path: 'recap',
+        element: <Recap />,
+        children: [
+          { path: ':recapId', element: <RecapDetailed /> }
+        ]
+      },
       { path: 'footprint', element: <Footprint /> },
       { path: 'projects', element: <Projects /> },
       { path: 'about', element: <About /> },
