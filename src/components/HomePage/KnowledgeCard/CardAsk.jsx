@@ -1,12 +1,13 @@
 import { ICONS } from "../../../Data/homePage";
 
-export default function CardAsk({ ask, btn, visibleState, visibleHandle }) {
+export default function CardAsk({ ask, btn, icon, visibleState, visibleHandle }) {
+    const Icon = visibleState ? ICONS.eyeOpen : ICONS.eyeClose;
+
     return (
         <div className={ask}>
             <h3>隐藏 HTML 元素的方法?</h3>
             <button onClick={visibleHandle} className={btn}>
-                {visibleState && <img src={ICONS.eyeOpen} />}
-                {!visibleState && <img src={ICONS.eyeClose} />}
+                <Icon className={icon} />
             </button>
         </div>
     )

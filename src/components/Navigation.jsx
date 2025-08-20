@@ -1,8 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { useRef, useState } from "react";
 
 import classes from './Navigation.module.css';
+import RecapDropArrow from "./Recap/RecapDropArrow";
+import RecapDropContent from "./Recap/RecapDropContent";
 
 export default function Navigation() {
+    const [dropList, setDropList] = useState(false);
+
+    const timer = useRef(null);
+    const open = () => { clearTimeout(timer.current); setDropList(true); };
+    const close = () => { timer.current = setTimeout(() => setDropList(false), 120); }; // 轻微延迟更稳
+
     return (
         <header className={classes.header}>
             <nav className={classes.nav}>
@@ -17,13 +26,21 @@ export default function Navigation() {
                             HomePage
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink
-                            to='/recap'
-                            className={({ isActive }) => isActive ? classes.active : undefined}
-                        >
-                            Recap
-                        </NavLink>
+                    <li
+                        onMouseEnter={open}
+                        onMouseLeave={close}
+                        style={{ position: 'relative' }}
+                    >
+                        <div className={classes.items}>
+                            <NavLink
+                                to='/recap'
+                                className={({ isActive }) => isActive ? classes.active : undefined}
+                            >
+                                Recap
+                            </NavLink>
+                            <RecapDropArrow drop={dropList} onChange={() => setDropList(prev => !prev)} />
+                        </div>
+                        <RecapDropContent drop={dropList} onChange={setDropList} />
                     </li>
                     <li>
                         <NavLink

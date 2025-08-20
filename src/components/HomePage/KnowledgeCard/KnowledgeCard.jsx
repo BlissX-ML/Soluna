@@ -23,6 +23,7 @@ export default function KnowledgeCard() {
                     <CardAsk
                         ask={classes.ask}
                         btn={classes.btn}
+                        icon={classes.icon}
                         visibleState={visibility}
                         visibleHandle={handleBtnVisible}
                     />

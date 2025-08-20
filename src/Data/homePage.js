@@ -1,3 +1,16 @@
+import Eye from '@/icons/eye.svg?react'
+import EyeClose from '@/icons/eye-close.svg?react'
+import ArrowUp from '@/icons/arrowUp.svg?react'
+import ArrowDown from '@/icons/arrowDown.svg?react'
+
+
+export const ICONS = {
+    eyeOpen: Eye,
+    eyeClose: EyeClose,
+    arrowUp: ArrowUp,
+    arrowDown: ArrowDown,
+}
+
 export const SCROLL_IMAGES = [
     {
         key: 'image_1',
@@ -19,7 +32,3 @@ export const SCROLL_IMAGES = [
     }
 ];
 
-export const ICONS = {
-    eyeOpen: './images/icons/eye.svg',
-    eyeClose: './images/icons/eye-close.svg'
-}

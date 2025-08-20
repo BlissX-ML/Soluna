@@ -1,0 +1,28 @@
+.nav {
+    display: inline-block; 
+    align-items: center;
+    gap:.3rem;
+    margin:0;
+    padding: 0;
+}
+
+.btn {
+    border: none;
+    margin:0;
+    padding: 0;
+    background-color: transparent;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;  /* 让箭头图片垂直居中 */
+    justify-content: center;
+}
+
+.arrow {
+    width: 1.2rem;
+    align-items: center;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+}
