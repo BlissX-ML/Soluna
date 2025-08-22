@@ -4,6 +4,9 @@ import { useRef, useState } from "react";
 import classes from './Navigation.module.css';
 import RecapDropArrow from "./Recap/RecapDropArrow";
 import RecapDropContent from "./Recap/RecapDropContent";
+import { ICONS } from "../Data/homePage";
+
+const Logo = ICONS.logo;
 
 export default function Navigation() {
     const [dropList, setDropList] = useState(false);
@@ -15,7 +18,7 @@ export default function Navigation() {
     return (
         <header className={classes.header}>
             <nav className={classes.nav}>
-                <img className={classes.logo} />
+                <Logo className={classes.logo} />
 
                 <ul className={classes.ul}>
                     <li>

@@ -14,12 +14,17 @@
     justify-content: center;  /* 水平居中 nav 子元素（ul） */
     align-items: center;      /* 垂直居中 */
     padding: 10px;
-   border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
 }
 
 /* logo部分 */
 .logo {
-    width: 10em;
+    align-items: center;
+    overflow: hidden;
+    width: 9rem;
+    height: auto;
+    text-align: center;
+    background-size: contain;
 }
 
 /* 导航部分 */

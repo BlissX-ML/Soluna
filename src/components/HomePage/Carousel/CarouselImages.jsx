@@ -22,7 +22,6 @@ export default function CarouselImages() {
     };
 
     return (
-
         <main className={classes.carousel}>
             <Slider {...settings}>
                 {SCROLL_IMAGES.map((img, i) => (

@@ -2,13 +2,16 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Nav from './pages/Nav.jsx'
-import Homepage from './pages/Homepage.jsx'
+// import Homepage from './pages/Homepage.jsx'
 import Recap from './pages/Recap.jsx'
 import Footprint from './pages/Footprint.jsx'
 import Projects from './pages/Projects.jsx'
 import About from './pages/About.jsx'
 import RecapDetailed from './pages/RecapDetailed'
+import { lazy, Suspense } from 'react'
+import Loading from './pages/Loading'
 
+const Homepage = lazy(() => import('./pages/Homepage.jsx'))
 
 const router = createBrowserRouter([
   {
@@ -31,7 +34,11 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <Suspense fallback={<Loading />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  )
 }
 
 export default App
