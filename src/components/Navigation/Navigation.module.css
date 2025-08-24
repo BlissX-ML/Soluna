@@ -1,18 +1,11 @@
-.header {
-  width: 100%;
-  height: fit-content;
-  max-height: 6rem;
-  text-align: center;
-  align-items: center;
-  vertical-align: middle;
-}
-
 .nav {
     background-color: #FAFAFA;
-    display:flex;
+    display: flex;
     gap: 1em;
-    justify-content: center;  /* 水平居中 nav 子元素（ul） */
-    align-items: center;      /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 nav 子元素（ul） */
+    align-items: center;
+    /* 垂直居中 */
     padding: 10px;
     border-bottom: 1px solid #DDDDDD;
 }
@@ -32,8 +25,9 @@
     flex: 1;
     gap: 2em;
     display: flex;
-    margin:0 auto;
-    align-items: center;      /* 居中每一项 */
+    margin: 0 auto;
+    align-items: center;
+    /* 居中每一项 */
     flex-direction: row;
     justify-content: center;
     list-style: none;
@@ -61,7 +55,7 @@
 }
 
 .items {
-    display:flex;
+    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;

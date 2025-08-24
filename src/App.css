@@ -9,6 +9,16 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+#root>.header {
+  width: 100%;
+  height: fit-content;
+  max-height: 6rem;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+
+}
+
 #root>section {
   width: 98%;
   background-color: #EFEFEF;
@@ -25,3 +35,20 @@
   align-items: center;
 }
 
+.recap-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.recap-container .recap-content {
+  flex: 1;
+  margin-left: 2rem;
+  width: calc(100% - 5rem);
+  padding: 1.3rem;
+}
+
+.recap-markdwon-content {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 18px;
+}

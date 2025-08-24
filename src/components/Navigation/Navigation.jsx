@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import { useRef, useState } from "react";
 
 import classes from './Navigation.module.css';
-import RecapDropArrow from "./Recap/RecapDropArrow";
-import RecapDropContent from "./Recap/RecapDropContent";
-import { ICONS } from "../Data/homePage";
+import RecapDropArrow from "../Recap/DropArrow";
+import RecapDropContent from "../Recap/DropContent";
+import { ICONS } from "../../Data/homePage";
 
 const Logo = ICONS.logo;
 
@@ -16,7 +16,7 @@ export default function Navigation() {
     const close = () => { timer.current = setTimeout(() => setDropList(false), 120); }; // 轻微延迟更稳
 
     return (
-        <header className={classes.header}>
+        <header className='header'>
             <nav className={classes.nav}>
                 <Logo className={classes.logo} />
 

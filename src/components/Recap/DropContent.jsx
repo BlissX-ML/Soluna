@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import classes from './RecapDropContent.module.css'
+import classes from './DropContent.module.css'
 
-export default function RecapDropContent({ drop, onChange }) {
+export default function DropContent({ drop, onChange }) {
     const navigate = useNavigate();
 
     return (

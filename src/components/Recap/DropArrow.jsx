@@ -1,7 +1,7 @@
-import classes from './RecapDropArrow.module.css'
+import classes from './DropArrow.module.css'
 import { ICONS } from '../../Data/homePage';
 
-export default function RecapDropArrow({ drop, onChange }) {
+export default function DropArrow({ drop, onChange }) {
     const Icon = drop ? ICONS.arrowUp : ICONS.arrowDown;
 
     return (

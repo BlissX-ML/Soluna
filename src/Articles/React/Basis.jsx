@@ -1,6 +1,7 @@
 import Markdown from 'react-markdown'
 
-const markdown = `### 1      What is React?
+const markdown = `
+### 1      What is React?
 
 - What is React?
     - React is a **JavaScript library** for building user interfaces.
@@ -13,9 +14,6 @@ const markdown = `### 1      What is React?
 
 
 export default function Basis() {
-    return (
-        <div>
-            <Markdown>{markdown}</Markdown>
-        </div>
-    )
+    return <Markdown>{markdown}</Markdown>
+
 }
