@@ -5,10 +5,9 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 import store from './components/HomePage/Caroudel-noSlick/store'
 
-createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </Provider>
-)
+createRoot(document.getElementById('root')).render(< App />)
+
+// <Provider store={store}>
+//   <StrictMode>
+// {/* </StrictMode>
+//   </Provider> */}
