@@ -4,7 +4,10 @@
         "module": "ESNext",
         "checkJs": true,
         "jsx": "react-jsx",
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "types": [
+            "vite/client"
+        ]
     },
     "include": [
         "src",
