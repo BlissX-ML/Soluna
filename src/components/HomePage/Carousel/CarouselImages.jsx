@@ -1,45 +1,41 @@
-import classes from './CarouselImages.module.css'
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import classes from './CarouselImages.module.css';
 import { SCROLL_IMAGES } from '../../../Data/homePage.js';
 
-// 轮播图的 CSS 依赖
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 export default function CarouselImages() {
-
-    const settings = {
-        dots: true,
-        infinite: true,      // 让 slick 自己做首尾克隆
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        arrows: true,        // 需要左右箭头就开
-        adaptiveHeight: false,
-        pauseOnHover: true,
-    };
-
     return (
-        <main className={classes.carousel}>
-            <Slider {...settings}>
-                {SCROLL_IMAGES.map((img, i) => (
-                    <div key={i}>
-                        <div
-                            className={classes.screen}
-                            style={{ backgroundImage: `url(${img.src})` }}
-                        >
-                            <div className={classes.content}>
-                                <div className={classes.des}>
-                                    <h2>{img.title}</h2>
-                                    <p><i>{img.description}</i></p>
-                                </div>
-                            </div>
+        <Swiper
+            modules={[Navigation, Pagination, Autoplay, A11y]}
+            spaceBetween={30}
+            slidesPerView={1}                  // 每次只展示 1 张，类似 slick
+            navigation                         // 左右箭头
+            pagination={{ clickable: true }}   // 小圆点
+            autoplay={{
+                delay: 5000,                   // 自动切换间隔
+                disableOnInteraction: false,   // 用户操作后仍然自动轮播
+            }}
+            loop={true}                        // 无限循环（= slick 的 infinite）
+            speed={500}                        // 切换动画速度
+            onSlideChange={() => console.log('slide changed')}
+            onSwiper={(swiper) => console.log('Swiper instance:', swiper)}
+        >
+            {SCROLL_IMAGES.map((img) => (
+                <SwiperSlide key={img.key} className={classes.screen}
+                    style={{ backgroundImage: `url(${img.src})` }}>
+                    <div className={classes.content}>
+                        <div className={classes.des}>
+                            <h2>{img.title}</h2>
+                            <p><i>{img.description}</i></p>
                         </div>
                     </div>
-                ))}
-            </Slider>
-        </main >
-    )
+                </SwiperSlide>
+            ))}
+        </Swiper>
+    );
 }
