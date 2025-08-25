@@ -34,21 +34,3 @@
   text-align: center;
   align-items: center;
 }
-
-.recap-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.recap-container .recap-content {
-  flex: 1;
-  margin-left: 2rem;
-  width: calc(100% - 5rem);
-  padding: 1.3rem;
-}
-
-.recap-markdwon-content {
-  text-align: left;
-  line-height: 1.8;
-  font-size: 18px;
-}

@@ -1,13 +1,14 @@
 import classes from './KnowledgeCard.module.css'
+import { memo, useContext } from 'react';
 
-import Titles from '../Titles';
+import Titles from './Titles';
 import CardAnswer from './CardAnswer';
-import { useState } from 'react';
 import CardAsk from './CardAsk';
+import { CardContext } from '../../../store/knowledgeCardContext';
 
-export default function KnowledgeCard() {
-    const [visibility, setVisibility] = useState(false);
-    function handleBtnVisible() { setVisibility(!visibility) }
+function KnowledgeCard() {
+    const ctx = useContext(CardContext);
+    console.log(ctx.state)
 
     return (
         <>
@@ -20,15 +21,9 @@ export default function KnowledgeCard() {
                 </div>
 
                 <div className={classes.right}>
-                    <CardAsk
-                        ask={classes.ask}
-                        btn={classes.btn}
-                        icon={classes.icon}
-                        visibleState={visibility}
-                        visibleHandle={handleBtnVisible}
-                    />
+                    <CardAsk ask={classes.ask} btn={classes.btn} icon={classes.icon} />
 
-                    <div className={visibility ? `${classes.answer} ${classes.show}` : `${classes.answer}`}>
+                    <div className={ctx.state ? `${classes.answer} ${classes.show}` : `${classes.answer}`}>
                         <CardAnswer
                             ans={classes.detailedAns}
                         />
@@ -36,6 +31,7 @@ export default function KnowledgeCard() {
                 </div>
             </main>
         </>
-
     )
 }
+
+export default memo(KnowledgeCard)
