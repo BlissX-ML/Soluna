@@ -1,9 +1,9 @@
-name: Deploy React App
+name: Deploy React App to GitHub Pages (main branch)
 
 on:
   push:
     branches:
-      - main   # 当 main 有 push 时触发部署
+      - main   # 只要 main 有更新，就自动跑构建
 
 jobs:
   build:
@@ -20,12 +20,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      # 把 dist 的内容移动到 docs/，这样 Pages 可以用 main/docs
+      - name: Move build output to docs
+        run: |
+          rm -rf docs
+          mkdir docs
+          cp -r dist/* docs/
 
+      - name: Commit and push docs to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "Update docs for GitHub Pages" || echo "No changes to commit"
+          git push
