@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Soluna/',
   plugins: [
     react(),
     svgr(),
