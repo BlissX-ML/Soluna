@@ -4,7 +4,7 @@ import { memo, useContext } from 'react';
 import Titles from './Titles.jsx';
 import CardAnswer from './CardAnswer.jsx';
 import CardAsk from './CardAsk.jsx';
-import { CardContext } from '../../../store/knowledgeCardContext.js';
+import { CardContext } from '../../../store/knowledgeCardContext.jsx';
 
 function KnowledgeCard() {
     const ctx = useContext(CardContext);
