@@ -4,8 +4,10 @@ import svgr from 'vite-plugin-svgr';
 import mdx from '@mdx-js/rollup'
 import remarkGfm from 'remark-gfm'
 
+const repoName = 'soluna.github.io'
+
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     svgr(),
@@ -13,9 +15,10 @@ export default defineConfig({
       remarkPlugins: [remarkGfm]
     })
   ],
+  base: mode === 'production' ? `/${repoName}/` : '/',
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.js'
   }
-})
+}))
