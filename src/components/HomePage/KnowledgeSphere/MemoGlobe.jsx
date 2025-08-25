@@ -1,4 +1,4 @@
-import Glob from "./Glob";
+import Glob from "./Glob.jsx";
 import classes from './MemoGlobe.module.css'
 
 export default function MemoGlobe() {

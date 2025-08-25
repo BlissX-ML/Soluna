@@ -1,6 +1,6 @@
 import classes from './CarouselImages.module.css'
 import Slider from 'react-slick';
-import { SCROLL_IMAGES } from '../../../Data/homePage';
+import { SCROLL_IMAGES } from '../../../Data/homePage.js';
 
 // 轮播图的 CSS 依赖
 import "slick-carousel/slick/slick.css";

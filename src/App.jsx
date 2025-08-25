@@ -2,15 +2,15 @@ import './App.css'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-import Nav from './Pages/Nav'
+import Nav from './Pages/Nav.jsx'
 import RecapContent from './components/Recap/DefaultContent.jsx'
 import Footprint from './Pages/Footprint.jsx'
 import Projects from './Pages/Projects.jsx'
 import About from './Pages/About.jsx'
-import RecapDetailed from './Pages/RecapDetailed'
+import RecapDetailed from './Pages/RecapDetailed.jsx'
 
-import Loading from './Pages/Loading'
-import RecapAside from './Pages/RecapAside'
+import Loading from './Pages/Loading.jsx'
+import RecapAside from './Pages/RecapAside.jsx'
 
 
 const Homepage = lazy(() => import('./Pages/Homepage.jsx'))

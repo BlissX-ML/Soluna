@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import { ICONS } from "../../../Data/homePage";
-import { CardContext } from "../../../store/knowledgeCardContext";
+import { CardContext } from "../../../store/knowledgeCardContext.js";
 
 export default function CardAsk({ ask, btn, icon }) {
     const ctx = useContext(CardContext);

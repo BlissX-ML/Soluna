@@ -1,4 +1,4 @@
-import ContentNo1768 from "../Articles/Computer/LeetCode/No1768";
+import ContentNo1768 from "../Articles/Computer/LeetCode/No1768.jsx";
 
 export const LEETCODE_SUMMARY = [
     {

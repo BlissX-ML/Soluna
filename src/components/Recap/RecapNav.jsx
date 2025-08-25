@@ -1,6 +1,7 @@
-import { RECAP_NAV } from '../../Data/recap'
+import { RECAP_NAV } from '../../Data/recap.js'
 import classes from './RecapNav.module.css'
-console.log(RECAP_NAV)
+
+
 export default function RecapNav() {
     return (
         <aside className={classes.aside}>

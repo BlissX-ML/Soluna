@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import { useRef, useState } from "react";
 
 import classes from './Navigation.module.css';
-import RecapDropArrow from "../Recap/DropArrow";
-import RecapDropContent from "../Recap/DropContent";
-import { ICONS } from "../../Data/homePage";
+import RecapDropArrow from "../Recap/DropArrow.jsx";
+import RecapDropContent from "../Recap/DropContent.jsx";
+import { ICONS } from "../../Data/homePage.js";
 
 const Logo = ICONS.logo;
 

@@ -1,10 +1,10 @@
 import classes from './KnowledgeCard.module.css'
 import { memo, useContext } from 'react';
 
-import Titles from './Titles';
-import CardAnswer from './CardAnswer';
-import CardAsk from './CardAsk';
-import { CardContext } from '../../../store/knowledgeCardContext';
+import Titles from './Titles.jsx';
+import CardAnswer from './CardAnswer.jsx';
+import CardAsk from './CardAsk.jsx';
+import { CardContext } from '../../../store/knowledgeCardContext.js';
 
 function KnowledgeCard() {
     const ctx = useContext(CardContext);
