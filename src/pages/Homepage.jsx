@@ -1,7 +1,7 @@
 import CarouselImages from "../components/HomePage/Carousel/CarouselImages.jsx";
 import KnowledgeCard from "../components/HomePage/KnowledgeCard/KnowledgeCard.jsx";
 import MemoGlobe from "../components/HomePage/KnowledgeSphere/MemoGlobe.jsx";
-import KnowledgeCardContext from "../store/knowledgeCardContext.jsx";
+import { KnowledgeCardContext } from "../store/knowledgeCardContext.jsx";
 
 export default function Homepage() {
     return (

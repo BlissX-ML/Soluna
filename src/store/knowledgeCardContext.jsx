@@ -7,7 +7,7 @@ export const CardContext = createContext({
     changeVisible: () => { }
 })
 
-export default function KnowledgeCardContext({ children }) {
+export function KnowledgeCardContext({ children }) {
     const [visibility, setVisibility] = useState(false);
 
     const Icon = useMemo(
