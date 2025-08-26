@@ -5,10 +5,10 @@ import mdx from '@mdx-js/rollup';     // 直接渲染 markdown 文件
 import remarkGfm from 'remark-gfm'    // 提高 markdown 渲染的可能性
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';  // 实现图片压缩，静态打包
 
-const repoName = 'soluna.github.io'
+// const repoName = 'soluna.github.io'
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   plugins: [
     react(),
     svgr(),
@@ -31,7 +31,8 @@ export default defineConfig(({ mode }) => ({
       }
     }),
   ],
-  base: mode === 'production' ? `/${repoName}/` : '/',
+  base: './',
+  // base: mode === 'production' ? `/${repoName}/` : '/',
   test: {
     globals: true,
     environment: 'jsdom',
