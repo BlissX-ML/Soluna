@@ -3,7 +3,7 @@ name: Deploy React App to Pages
 on:
   push:
     branches:
-      - main   # 每次推到 main 时触发
+      - main
 
 jobs:
   build:
@@ -23,7 +23,9 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 官方 Pages Action，自动把 dist 放到 main/docs
+      - name: Add CNAME   # ✅ 确保 CNAME 在 dist 内
+        run: echo "blissxml.cn" > ./dist/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
