@@ -19,23 +19,23 @@ export const SCROLL_IMAGES = [
     {
         key: 'image_1',
         title: 'Grass',
-        src: '/images/screen1.jpg',
-        webp: '/images/screen1.webp',   // 新增 webp 路径
+        src: '/images/png/screen1.jpg',
+        webp: '/images/webp/screen1.webp',   // 新增 webp 路径
         // src: IMAGES['../images/homepage/screen1.jpg'],
         description: 'This is a beautiful place.'
     },
     {
         key: 'image_2',
         title: 'Dogs',
-        src: '/images/screen2.png',
-        webp: '/images/screen2.webp',
+        src: '/images/png/screen2.png',
+        webp: '/images/webp/screen2.webp',
         description: 'Freedom??!!'
     },
     {
         key: 'image_3',
         title: 'Ocean',
-        src: '/images/screen3.png',
-        webp: '/images/screen3.webp',
+        src: '/images/png/screen3.png',
+        webp: '/images/webp/screen3.webp',
         description: 'Just beautiful?'
     }
 ];
