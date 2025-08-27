@@ -43,6 +43,10 @@
     color: black;
 }
 
+.ul .recap {
+    position: relative;
+}
+
 /* 可能是登录/注册部分 */
 .other {
     width: 10rem;
@@ -54,7 +58,7 @@
     text-shadow: 2px 2px 0.5px #D8CFC4;
 }
 
-.items {
+.recap .items {
     display: flex;
     text-align: center;
     align-items: center;

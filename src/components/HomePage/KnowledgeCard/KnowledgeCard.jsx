@@ -8,7 +8,6 @@ import { CardContext } from '../../../store/knowledgeCardContext.jsx';
 
 function KnowledgeCard() {
     const ctx = useContext(CardContext);
-    console.log(ctx.state)
 
     return (
         <>
@@ -21,15 +20,13 @@ function KnowledgeCard() {
                 </div>
 
                 <div className={classes.right}>
-                    <CardAsk ask={classes.ask} btn={classes.btn} icon={classes.icon} />
+                    <CardAsk />
 
-                    <div className={ctx.state ? `${classes.answer} ${classes.show}` : `${classes.answer}`}>
-                        <CardAnswer
-                            ans={classes.detailedAns}
-                        />
+                    <div className={`${classes.answer} ${ctx.state ? classes.show : ''}`} >
+                        <CardAnswer />
                     </div>
                 </div>
-            </main>
+            </main >
         </>
     )
 }

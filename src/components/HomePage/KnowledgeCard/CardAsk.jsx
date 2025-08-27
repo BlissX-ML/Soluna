@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { CardContext } from "../../../store/knowledgeCardContext.jsx";
+import classes from './KnowledgeCard.module.css'
 
-export default function CardAsk({ ask, btn, icon }) {
+export default function CardAsk() {
     const ctx = useContext(CardContext);
 
     return (
-        <div className={ask}>
+        <div className={classes.ask}>
             <h3>隐藏 HTML 元素的方法?</h3>
-            <button onClick={ctx.changeVisible} className={btn}>
-                <ctx.icon className={icon} />
+            <button onClick={ctx.changeVisible}>
+                <ctx.icon className={classes.icon} />
             </button>
         </div>
     )

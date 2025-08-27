@@ -1,6 +1,8 @@
-export default function CardAnswer({ ans }) {
+import classes from './KnowledgeCard.module.css'
+
+export default function CardAnswer() {
     return (
-        <div className={ans}>
+        <div className={classes.ans}>
             <p>1. CSS: `display` 属性</p>
             <p>2. CSS: `visibility` 属性</p>
             <p>3. CSS: `opacity` 属性 + `pointer-events: none`</p>

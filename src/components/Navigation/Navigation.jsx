@@ -1,19 +1,16 @@
 import { NavLink } from "react-router-dom";
-import { useRef, useState } from "react";
-
+import { useContext } from "react";
 import classes from './Navigation.module.css';
-import RecapDropArrow from "../Recap/DropArrow.jsx";
-import RecapDropContent from "../Recap/DropContent.jsx";
+
+import DropArrow from "../Recap/DropArrow.jsx";
+import DropContent from "../Recap/DropContent.jsx";
 import { ICONS } from "../../Data/homePage.js";
+import { RecapContext } from "../../store/NavigationContext.jsx";
 
 const Logo = ICONS.logo;
 
 export default function Navigation() {
-    const [dropList, setDropList] = useState(false);
-
-    const timer = useRef(null);
-    const open = () => { clearTimeout(timer.current); setDropList(true); };
-    const close = () => { timer.current = setTimeout(() => setDropList(false), 120); }; // 轻微延迟更稳
+    const ctx = useContext(RecapContext)
 
     return (
         <header className='header'>
@@ -29,11 +26,8 @@ export default function Navigation() {
                             HomePage
                         </NavLink>
                     </li>
-                    <li
-                        onMouseEnter={open}
-                        onMouseLeave={close}
-                        style={{ position: 'relative' }}
-                    >
+
+                    <li className={classes.recap} onMouseEnter={ctx.dropOpen} onMouseLeave={ctx.dropClose}>
                         <div className={classes.items}>
                             <NavLink
                                 to='/recap'
@@ -41,9 +35,9 @@ export default function Navigation() {
                             >
                                 Recap
                             </NavLink>
-                            <RecapDropArrow drop={dropList} onChange={() => setDropList(prev => !prev)} />
+                            <DropArrow drop={ctx.dropState} onChange={ctx.dropStateSet} />
                         </div>
-                        <RecapDropContent drop={dropList} onChange={setDropList} />
+                        <DropContent />
                     </li>
                     <li>
                         <NavLink

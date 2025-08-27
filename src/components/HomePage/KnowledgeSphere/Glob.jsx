@@ -4,8 +4,14 @@ import { useState } from "react";
 
 export default function Glob({ children, src, delay }) {
     const [hasMouseEnter, setHasMouseEnter] = useState(false);
-    function handleMouseEnter() { setHasMouseEnter(true) }
-    function handleMouseMove() { setHasMouseEnter(false) }
+
+    function handleMouseEnter() {
+        setHasMouseEnter(true)
+    }
+
+    function handleMouseMove() {
+        setHasMouseEnter(false)
+    }
 
     return (
         <div
