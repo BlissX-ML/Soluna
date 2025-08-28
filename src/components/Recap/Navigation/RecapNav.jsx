@@ -1,14 +1,11 @@
-import { RECAP_NAV } from '../../Data/recap.js'
 import classes from './RecapNav.module.css'
-
+import CategoryTitle from '../Category/CategoryTitle.jsx'
 
 export default function RecapNav() {
     return (
         <aside className={classes.aside}>
             <ul>
-                {RECAP_NAV.map((val) => (
-                    <li key={val.key}>{val.title}</li>
-                ))}
+                <CategoryTitle />
             </ul>
         </aside>
     )

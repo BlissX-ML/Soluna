@@ -12,12 +12,14 @@
     text-align: left;
     gap: 1rem;
     font-size: 1.1rem;
+    border-radius: 5px;
 }
 
 .aside ul li {
     gap: 1rem;
     padding: 1rem;
     background-color: #003366;
+    border-radius: 5px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     list-style: none;
     cursor: pointer;
@@ -27,5 +29,4 @@
 .aside ul li:hover {
     background-color: #d0e7ff;
     color: rgb(47, 47, 47);
-    border-radius: 5px;
 }

@@ -1,7 +1,8 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
 import classes from './DropContent.module.css'
-import { useContext } from 'react';
-import { RecapContext } from '../../store/NavigationContext.jsx';
+
+import { RecapContext } from '../../../store/NavigationContext.jsx';
 
 export default function DropContent() {
     const navigate = useNavigate();

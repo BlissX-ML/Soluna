@@ -3,11 +3,11 @@ import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
 import Nav from './pages/Nav.jsx'
-import RecapContent from './components/Recap/DefaultContent.jsx'
+import RecapSubNav from './components/Recap/Navigation/RecapSubNav.jsx'
 import Footprint from './pages/Footprint.jsx'
 import Projects from './pages/Projects.jsx'
 import About from './pages/About.jsx'
-import RecapDetailed from './pages/RecapDetailed.jsx'
+import RecapContent from './pages/RecapContent.jsx'
 
 import Loading from './pages/Loading.jsx'
 import RecapAside from './pages/RecapAside.jsx'
@@ -25,8 +25,8 @@ const router = createHashRouter([
         path: 'recap',
         element: <RecapAside />,
         children: [
-          { index: true, element: <RecapContent />, },
-          { path: ':recapId', element: <RecapDetailed /> }
+          { index: true, element: <RecapSubNav />, },
+          { path: ':recapId', element: <RecapContent /> }
         ]
       },
       { path: 'footprint', element: <Footprint /> },

@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import classes from './Navigation.module.css';
 
-import DropArrow from "../Recap/DropArrow.jsx";
-import DropContent from "../Recap/DropContent.jsx";
+import DropArrow from "../Recap/Drop/DropArrow.jsx";
+import DropContent from "../Recap/Drop/DropContent.jsx";
 import { ICONS } from "../../Data/homePage.js";
 import { RecapContext } from "../../store/NavigationContext.jsx";
 
