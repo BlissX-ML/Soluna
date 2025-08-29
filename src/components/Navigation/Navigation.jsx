@@ -5,7 +5,7 @@ import DropArrow from "../Recap/Drop/DropArrow.jsx";
 import DropContent from "../Recap/Drop/DropContent.jsx";
 import { ICONS } from "../../Data/homePage.js";
 import { recapAsideContext } from "../../store/RecapAsideManageContext.jsx";
-import NavItems from "./NavItems";
+import NavItems from "./NavItems.jsx";
 
 const Logo = ICONS.logo;
 

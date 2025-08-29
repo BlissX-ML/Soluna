@@ -1,5 +1,5 @@
 import { createContext, useCallback, useMemo, useState } from "react";
-import { ICONS } from "../Data/homePage";
+import { ICONS } from "../Data/homePage.js";
 
 export const CardContext = createContext({
     state: false,

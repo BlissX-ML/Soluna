@@ -1,10 +1,8 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import classes from './Glob.module.css'
 import { useState } from "react";
+import classes from './Glob.module.css'
+
 
 export default function Glob({ children, delay, handleClick }) {
-    const navigate = useNavigate();
-
     const [hasMouseEnter, setHasMouseEnter] = useState(false);
 
     function handleMouseEnter() {
