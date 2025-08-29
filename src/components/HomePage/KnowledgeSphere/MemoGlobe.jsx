@@ -1,21 +1,26 @@
+import { useContext } from "react";
+import { RECAP_NAV } from "../../../Data/recap.js";
 import Glob from "./Glob.jsx";
 import classes from './MemoGlobe.module.css'
+import { recapAsideContext } from "../../../store/RecapAsideManageContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function MemoGlobe() {
+    const ctx = useContext(recapAsideContext);
+    const navigate = useNavigate()
+
+    function handleClick(key) {
+        ctx.setActiveKey(key);
+        navigate('/recap')
+    }
+
     return (
         <main className={classes.memoGlobe}>
-            <Glob src="/recap/computer" delay={-1}>
-                Computer Related
-            </Glob>
-            <Glob src="/recap/chemistry" delay={0.6}>
-                Chemistry Related
-            </Glob>
-            <Glob src="/recap/language" delay={-0.3}>
-                Language Related
-            </Glob>
-            <Glob src="/recap/animal" delay={0}>
-                Animal Related
-            </Glob>
+            {RECAP_NAV.map(els => (
+                <Glob delay={els.delayTime} key={els.key} handleClick={() => handleClick(els.key)}>
+                    {els.title}
+                </Glob>
+            ))}
         </main>
     )
 }

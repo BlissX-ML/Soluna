@@ -1,8 +1,12 @@
+const getRandom = () => {
+    return (Math.random() * 2 - 1).toFixed(2)
+}
+
 export const RECAP_NAV = [
-    { key: 'Computer-Related', title: 'Computer-Related', dropTitle: 'Computer' },
-    { key: 'Chemistry-Related', title: 'Chemistry-Related', dropTitle: 'Chemistry' },
-    { key: 'Language-Related', title: 'Language-Related', dropTitle: 'Language' },
-    { key: 'Animal-Related', title: 'Animal-Related', dropTitle: 'Animal' },
+    { key: 'Computer-Related', title: 'Computer-Related', dropTitle: 'Computer', delayTime: getRandom() },
+    { key: 'Chemistry-Related', title: 'Chemistry-Related', dropTitle: 'Chemistry', delayTime: getRandom() },
+    { key: 'Language-Related', title: 'Language-Related', dropTitle: 'Language', delayTime: getRandom() },
+    { key: 'Animal-Related', title: 'Animal-Related', dropTitle: 'Animal', delayTime: getRandom() },
 ];
 
 export const RECAP_MAIN_KEYS = [...RECAP_NAV].map(el => el.key)

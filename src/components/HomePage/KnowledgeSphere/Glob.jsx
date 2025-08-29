@@ -1,8 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import classes from './Glob.module.css'
 import { useState } from "react";
 
-export default function Glob({ children, src, delay }) {
+export default function Glob({ children, delay, handleClick }) {
+    const navigate = useNavigate();
+
     const [hasMouseEnter, setHasMouseEnter] = useState(false);
 
     function handleMouseEnter() {
@@ -19,10 +21,11 @@ export default function Glob({ children, src, delay }) {
             style={{ animationDelay: `${delay}s` }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseMove}
+            onClick={handleClick}
         >
-            <NavLink to={src} className={classes.textLink} >
-                <p >{children}</p>
-            </NavLink>
+
+            <p className={classes.textLink}>{children}</p>
+
         </div >
     )
 }
