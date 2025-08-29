@@ -8,7 +8,7 @@ import { RECAP_Detailed_Nav } from "../../../Data/recap.js";
 export default function CategoryItem() {
     const ctx = useContext(recapAsideContext);
 
-    const curBigHeadline = ctx.key;
+    const curBigHeadline = ctx.activeKey;
     const contents = RECAP_Detailed_Nav.filter(el => el.key === curBigHeadline)[0].content;
 
     return (

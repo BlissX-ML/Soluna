@@ -1,39 +1,35 @@
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom';
 import classes from './DropContent.module.css'
 
-import { RecapContext } from '../../../store/NavigationContext.jsx';
+import { recapAsideContext } from '../../../store/RecapAsideManageContext.jsx';
+import { RECAP_NAV } from '../../../Data/recap.js';
+import DropContentItems from './DropContentItems.jsx';
+
 
 export default function DropContent() {
+    const ctx = useContext(recapAsideContext);
     const navigate = useNavigate();
-    const ctx = useContext(RecapContext);
+    const location = useLocation();
+
+    function handleClick(key) {
+        ctx.setActiveKey(key);
+        if (location.pathname !== '/recap') {
+            navigate('/recap');
+        }
+        ctx.toggleDrop();
+    }
 
     return (
         <div className={`${classes.content} ${ctx.dropState ? classes.show : ''}`}>
             <ul className={classes.list}>
-                <li>
-                    <button onClick={() => { navigate('/'); ctx.dropStateSet() }}>
-                        Chemistry
-                    </button>
-                </li>
-
-                <li>
-                    <button onClick={() => { navigate('/'); ctx.dropStateSet() }}>
-                        Computer
-                    </button>
-                </li>
-
-                <li>
-                    <button onClick={() => { navigate('/'); ctx.dropStateSet() }}>
-                        Language
-                    </button>
-                </li>
-
-                <li>
-                    <button onClick={() => { navigate('/'); ctx.dropStateSet() }}>
-                        Animal
-                    </button>
-                </li>
+                {RECAP_NAV.map(els => (
+                    <li key={els.key}>
+                        <DropContentItems curItem={els.key} handleClick={handleClick} >
+                            {els.dropTitle}
+                        </DropContentItems>
+                    </li>
+                ))}
             </ul>
         </div>
     )

@@ -1,16 +1,16 @@
-import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import classes from './Navigation.module.css';
 
 import DropArrow from "../Recap/Drop/DropArrow.jsx";
 import DropContent from "../Recap/Drop/DropContent.jsx";
 import { ICONS } from "../../Data/homePage.js";
-import { RecapContext } from "../../store/NavigationContext.jsx";
+import { recapAsideContext } from "../../store/RecapAsideManageContext.jsx";
+import NavItems from "./NavItems";
 
 const Logo = ICONS.logo;
 
 export default function Navigation() {
-    const ctx = useContext(RecapContext)
+    const ctx = useContext(recapAsideContext)
 
     return (
         <header className='header'>
@@ -19,49 +19,27 @@ export default function Navigation() {
 
                 <ul className={classes.ul}>
                     <li>
-                        <NavLink
-                            to='/'
-                            className={({ isActive }) => isActive ? classes.active : undefined}
-                        >
-                            HomePage
-                        </NavLink>
+                        <NavItems path='/'>HomePage</NavItems>
                     </li>
 
-                    <li className={classes.recap} onMouseEnter={ctx.dropOpen} onMouseLeave={ctx.dropClose}>
+                    <li className={classes.recap} onMouseEnter={ctx.openDrop} onMouseLeave={ctx.closeDrop}>
                         <div className={classes.items}>
-                            <NavLink
-                                to='/recap'
-                                className={({ isActive }) => isActive ? classes.active : undefined}
-                            >
-                                Recap
-                            </NavLink>
-                            <DropArrow drop={ctx.dropState} onChange={ctx.dropStateSet} />
+                            <NavItems path='/recap'>Recap</NavItems>
+                            <DropArrow drop={ctx.dropState} onChange={ctx.toggleDrop} />
                         </div>
                         <DropContent />
                     </li>
+
                     <li>
-                        <NavLink
-                            to='/footprint'
-                            className={({ isActive }) => isActive ? classes.active : undefined}
-                        >
-                            Footprint
-                        </NavLink>
+                        <NavItems path='/footprint'>Footprint</NavItems>
                     </li>
+
                     <li>
-                        <NavLink
-                            to='/projects'
-                            className={({ isActive }) => isActive ? classes.active : undefined}
-                        >
-                            Projects
-                        </NavLink>
+                        <NavItems path='/projects'>Projects</NavItems>
                     </li>
+
                     <li>
-                        <NavLink
-                            to='/about'
-                            className={({ isActive }) => isActive ? classes.active : undefined}
-                        >
-                            About
-                        </NavLink>
+                        <NavItems path='/about'>About</NavItems>
                     </li>
                 </ul>
 
