@@ -12,10 +12,12 @@ export default function Introduction() {
             <main className={classes.intro}>
                 <h1>欢迎访问我的网站💕</h1>
                 <table className={classes.table}>
-                    <Table th='学位' td='硕士学位' />
-                    <Table th='到岗时间' td='月内到岗' />
-                    <Table th='当前求职岗位' td='前端工程师' />
-                    <Table th='当前就业状态' td='离职待就业' />
+                    <tbody>
+                        <Table th='学位' td='硕士学位' />
+                        <Table th='到岗时间' td='月内到岗' />
+                        <Table th='当前求职岗位' td='前端工程师' />
+                        <Table th='当前就业状态' td='离职待就业' />
+                    </tbody>
                 </table>
                 <p className={classes.para}>
                     <span>✨不骄不躁戒熬夜，破界跨界闯世界。—— By 肖战</span>
