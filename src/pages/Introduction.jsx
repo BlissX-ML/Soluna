@@ -20,8 +20,8 @@ export default function Introduction() {
                     </tbody>
                 </table>
                 <p className={classes.para}>
-                    <span>✨不骄不躁戒熬夜，破界跨界闯世界。—— By 肖战</span>
-                    <span>✨我不相信我无法完成，我知道只是时间的问题。—— By 王一博</span>
+                    <span>✨不骄不躁戒熬夜，破界跨界闯世界。</span>
+                    <span>✨我不相信我无法完成，我知道只是时间的问题。</span>
                 </p>
                 <div className={classes.btns}>
                     <Button src='/home'>进入首页</Button>
