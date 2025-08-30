@@ -6,7 +6,9 @@
   color: #333333;
   display: flex;
   flex-direction: column;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:
+    "PingFang SC", "Microsoft YaHei", "Heiti SC", "Noto Sans SC",
+    "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 }
 
 #root>.header {

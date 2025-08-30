@@ -23,3 +23,15 @@
     width: fit-content;
     text-align: left;
 }
+
+.para {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.active {
+    font-weight: bold;
+    color: rgb(31, 86, 120);
+    background-color: rgb(201, 235, 255);
+}

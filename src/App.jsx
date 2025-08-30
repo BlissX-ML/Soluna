@@ -11,7 +11,7 @@ import RecapContent from './pages/RecapContent.jsx'
 
 import Loading from './pages/Loading.jsx'
 import RecapAside from './pages/RecapAside.jsx'
-import Introduction from './pages/Introduction'
+import Introduction from './pages/Introduction.jsx'
 
 
 const Homepage = lazy(() => import('./pages/Homepage.jsx'))

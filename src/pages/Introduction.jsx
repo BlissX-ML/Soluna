@@ -1,7 +1,8 @@
-import { INDEX_IMAGES } from '../Data/indexPage'
-import Button from '../components/Index/Button';
 import classes from './Introduction.module.css'
-import Table from '../components/Index/Table'
+
+import { INDEX_IMAGES } from '../Data/indexPage.js'
+import Button from '../components/Index/Button.jsx';
+import Table from '../components/Index/Table.jsx'
 
 const imageURL = INDEX_IMAGES[0].webp;
 
@@ -16,13 +17,13 @@ export default function Introduction() {
                     <Table th='当前求职岗位' td='前端工程师' />
                     <Table th='当前就业状态' td='离职待就业' />
                 </table>
-                <p>
-                    <span>✨不骄不躁戒熬夜，破界跨界闯世界。—— By 肖战</span><br />
+                <p className={classes.para}>
+                    <span>✨不骄不躁戒熬夜，破界跨界闯世界。—— By 肖战</span>
                     <span>✨我不相信我无法完成，我知道只是时间的问题。—— By 王一博</span>
                 </p>
                 <div className={classes.btns}>
                     <Button src='/home'>进入首页</Button>
-                    <Button src=''>联系邮箱</Button>
+                    <Button src='/about'>联系邮箱</Button>
                 </div>
             </main>
         </div>
