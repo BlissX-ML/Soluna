@@ -10,7 +10,6 @@
     border-bottom: 1px solid #DDDDDD;
 }
 
-/* logo部分 */
 .logo {
     align-items: center;
     overflow: hidden;
@@ -47,14 +46,20 @@
     position: relative;
 }
 
-/* 可能是登录/注册部分 */
-.other {
-    width: 10rem;
-}
-
 .recap .items {
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+.goBack {
+    width: 10rem
+}
+
+.goBack button {
+    font-size: .8rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
 }

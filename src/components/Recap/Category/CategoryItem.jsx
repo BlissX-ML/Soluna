@@ -15,7 +15,7 @@ export default function CategoryItem() {
         <ul className={classes.ul}>
             {contents.map(text => (
                 <li key={text.key}>
-                    <Link to={`/recap/${text.key}`}>
+                    <Link to={`${text.key}`}>
                         {text.content}
                     </Link>
                 </li>

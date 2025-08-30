@@ -6,11 +6,13 @@ import DropContent from "../Recap/Drop/DropContent.jsx";
 import { ICONS } from "../../Data/homePage.js";
 import { recapAsideContext } from "../../store/RecapAsideManageContext.jsx";
 import NavItems from "./NavItems.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Logo = ICONS.logo;
 
 export default function Navigation() {
-    const ctx = useContext(recapAsideContext)
+    const ctx = useContext(recapAsideContext);
+    const navigate = useNavigate();
 
     return (
         <header className='header'>
@@ -19,7 +21,7 @@ export default function Navigation() {
 
                 <ul className={classes.ul}>
                     <li>
-                        <NavItems path='/'>HomePage</NavItems>
+                        <NavItems path='/home'>HomePage</NavItems>
                     </li>
 
                     <li className={classes.recap} onMouseEnter={ctx.openDrop} onMouseLeave={ctx.closeDrop}>
@@ -31,19 +33,21 @@ export default function Navigation() {
                     </li>
 
                     <li>
-                        <NavItems path='/footprint'>Footprint</NavItems>
+                        <NavItems path='footprint'>Footprint</NavItems>
                     </li>
 
                     <li>
-                        <NavItems path='/projects'>Projects</NavItems>
+                        <NavItems path='projects'>Projects</NavItems>
                     </li>
 
                     <li>
-                        <NavItems path='/about'>About</NavItems>
+                        <NavItems path='about'>About</NavItems>
                     </li>
                 </ul>
 
-                <p className={classes.other}>Other</p>
+                <div className={classes.goBack}>
+                    <button onClick={() => navigate('/')}>返回介绍页</button>
+                </div>
             </nav>
         </header >
     )

@@ -14,8 +14,8 @@ export default function DropContent() {
 
     function handleClick(key) {
         ctx.setActiveKey(key);
-        if (location.pathname !== '/recap') {
-            navigate('/recap');
+        if (location.pathname !== '/home/recap') {
+            navigate('recap');
         }
         ctx.toggleDrop();
     }
