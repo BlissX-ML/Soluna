@@ -3,7 +3,9 @@ import Eye from '../icons/eye.svg?react'
 import EyeClose from '../icons/eye-close.svg?react'
 import ArrowUp from '../icons/arrowUp.svg?react'
 import ArrowDown from '../icons/arrowDown.svg?react'
-
+import ArrowRightDark from '../icons/arrowRightDark.svg?react'
+import ArrowRightLight from '../icons/arrowRightLight.svg?react'
+import Hint from '../icons/hint.svg?react'
 
 export const ICONS = {
     logo: Logo,
@@ -11,6 +13,9 @@ export const ICONS = {
     eyeClose: EyeClose,
     arrowUp: ArrowUp,
     arrowDown: ArrowDown,
+    arrowRightDark: ArrowRightDark,
+    arrowRightLight: ArrowRightLight,
+    hint: Hint,
 }
 
 // const IMAGES = import.meta.glob('/images/homepage/*.{jpg,png}', { eager: true, query: '?url', import: 'default' })
@@ -40,3 +45,11 @@ export const SCROLL_IMAGES = [
     }
 ];
 
+
+export const WELCOME_IMAGE = [
+    {
+        key: 'welcome_1',
+        src: 'images/png/welcome.jpg',
+        webp: 'images/webp/welcome.webp',
+    }
+]

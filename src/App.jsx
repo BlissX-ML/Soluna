@@ -12,6 +12,7 @@ import RecapContent from './pages/RecapContent.jsx'
 import Loading from './pages/Loading.jsx'
 import RecapAside from './pages/RecapAside.jsx'
 import Introduction from './pages/Introduction.jsx'
+import Plan from './pages/Plan.jsx'
 
 
 const Homepage = lazy(() => import('./pages/Homepage.jsx'))
@@ -24,6 +25,10 @@ const router = createHashRouter([
       {
         path: '/home',
         element: <Homepage />
+      },
+      {
+        path: '/plans',
+        element: <Plan />,
       },
       {
         path: '/recap',

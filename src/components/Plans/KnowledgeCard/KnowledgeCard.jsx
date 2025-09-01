@@ -11,7 +11,6 @@ function KnowledgeCard() {
 
     return (
         <>
-            <Titles>Questions?</Titles>
             <main className={classes.cardPart}>
 
                 <div className={classes.left}>

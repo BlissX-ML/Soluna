@@ -1,12 +1,12 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from './Navigation.module.css';
 
-import DropArrow from "../Recap/Drop/DropArrow.jsx";
-import DropContent from "../Recap/Drop/DropContent.jsx";
 import { ICONS } from "../../Data/homePage.js";
 import { recapAsideContext } from "../../store/RecapAsideManageContext.jsx";
+
 import NavItems from "./NavItems.jsx";
-import { useNavigate } from "react-router-dom";
+import NotionNav from "./NotionNav.jsx";
 
 const Logo = ICONS.logo;
 
@@ -21,27 +21,27 @@ export default function Navigation() {
 
                 <ul className={classes.ul}>
                     <li>
-                        <NavItems path='/home'>HomePage</NavItems>
+                        <NavItems path='/home'>首页</NavItems>
+                    </li>
+
+                    <li>
+                        <NavItems path='/plans'>计划</NavItems>
                     </li>
 
                     <li className={classes.recap} onMouseEnter={ctx.openDrop} onMouseLeave={ctx.closeDrop}>
-                        <div className={classes.items}>
-                            <NavItems path='/recap'>Recap</NavItems>
-                            <DropArrow drop={ctx.dropState} onChange={ctx.toggleDrop} />
-                        </div>
-                        <DropContent />
+                        <NotionNav />
                     </li>
 
                     <li>
-                        <NavItems path='footprint'>Footprint</NavItems>
+                        <NavItems path='footprint'>足迹</NavItems>
                     </li>
 
                     <li>
-                        <NavItems path='projects'>Projects</NavItems>
+                        <NavItems path='projects'>项目</NavItems>
                     </li>
 
                     <li>
-                        <NavItems path='about'>About</NavItems>
+                        <NavItems path='about'>关于我</NavItems>
                     </li>
                 </ul>
 

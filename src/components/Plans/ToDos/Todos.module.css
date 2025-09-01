@@ -1,0 +1,84 @@
+.todos {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.todosItems {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.todosItems fieldset {
+    width: 32rem;
+    border: 1.2px solid black;
+    border-radius: .5rem;
+}
+
+.todosItems fieldset legend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: .4rem;
+    padding: .5rem 1.5rem;
+}
+
+.todosItems fieldset div {
+    text-align: left;
+    padding: 1.5rem 2rem;
+}
+
+.todosItems fieldset div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.todosItems fieldset div ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.future div ul li::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #333;
+    flex-shrink: 0;
+}
+
+
+.fulfilled div ul li::before {
+    content: "✓";
+    color: green;
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid green;
+    text-align: center;
+    line-height: 1rem;
+}
+
+.future legend {
+    text-align: left;
+    margin-left: 4rem;
+}
+
+.fulfilled legend {
+    text-align: right;
+    margin-right: 4rem;
+}
+
+.todos svg {
+    width: .8rem;
+    height: .8rem;
+}

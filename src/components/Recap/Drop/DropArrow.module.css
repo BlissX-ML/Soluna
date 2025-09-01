@@ -11,13 +11,13 @@
     margin: 0;
     padding: 0;
     background-color: transparent;
-    width: 1.5rem;
+    width: fit-content;
     height: 1.5rem;
     cursor: pointer;
     display: flex;
     align-items: flex-end;
-    /* 让箭头图片垂直居中 */
-    justify-content: center;
+    justify-content: left;
+    padding-left: 3px;
 }
 
 .arrow {

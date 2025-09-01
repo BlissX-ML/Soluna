@@ -9,9 +9,6 @@ export default function Nav() {
                 <Navigation />
                 <Outlet />
             </RecapAsideManageContext>
-
         </>
-
-
     )
 }

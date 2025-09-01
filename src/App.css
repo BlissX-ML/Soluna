@@ -1,31 +1,29 @@
 #root {
   min-width: 760px;
-  height: auto;
+  height: 100%;
   text-align: center;
   background-color: #F7F7F7;
   color: #333333;
   display: flex;
   flex-direction: column;
-  font-family:
-    "PingFang SC", "Microsoft YaHei", "Heiti SC", "Noto Sans SC",
-    "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 }
 
 #root>.header {
+  position: fixed;
   width: 100%;
-  height: fit-content;
-  max-height: 6rem;
+  height: 5rem;
+  max-height: 5rem;
   text-align: center;
   align-items: center;
-  vertical-align: middle;
-
+  z-index: 100;
 }
 
-#root>section {
+#root section {
   width: 98%;
   background-color: #EFEFEF;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
+  margin-top: 5rem;
 }
 
 

@@ -4,8 +4,8 @@ import CategoryItem from '../Category/CategoryItem.jsx';
 
 export default function RecapSubNav() {
     return (
-        <section className={classes.content}>
+        <div className={classes.content}>
             <CategoryItem />
-        </section>
+        </div>
     )
 }
