@@ -1,18 +1,11 @@
-
-import { useContext } from 'react';
 import { COMPLETE_ITEMS, TODO_ITEMS } from '../../../Data/plans.js';
 import FiledSetContent from './FiledSetContent.jsx';
 import FiledSetTitle from './FiledSetTitle.jsx';
 import classes from './Todos.module.css';
-import { TodosContext } from '../../../store/TodosManagaeContext.jsx';
+import TodosContent from './TodosContent.jsx';
 
-import IELTS from '../../../Articles/Plans/Todos/IELTSTest.mdx';
 
 export default function Todos() {
-    const ctx = useContext(TodosContext);
-    console.log(ctx.activeContent)
-    const ActiveComp = ctx.activeContent
-
     return (
         <div className={classes.todos}>
             <div className={classes.todosItems}>
@@ -27,10 +20,7 @@ export default function Todos() {
                 </fieldset>
             </div>
 
-            <div className={classes.todoContent}>
-                {ctx.activeState && ActiveComp}
-                {/* <IELTS /> */}
-            </div>
+            <TodosContent />
         </div>
     )
 }

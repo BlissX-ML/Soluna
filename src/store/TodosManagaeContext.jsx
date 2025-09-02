@@ -1,4 +1,6 @@
 import { createContext, useMemo, useState } from "react";
+import mdxWrapper from "../mdxWrapper.jsx";
+// import classes from '../../../Articles/Plans/Todos/mdxWrapperStyle.module.css'
 
 export const TodosContext = createContext({
     activeItem: null,
@@ -12,11 +14,12 @@ export function TodosManagaeContext({ children }) {
     const [isActive, setIsActive] = useState(false);
     const [content, setContent] = useState(null);
 
-
     function handleClick(item) {
-        setCurActiveItem(item)
+        setCurActiveItem({ ...item })
         setIsActive(true)
-        setContent(<item.learnRoute />)
+
+        const Comp = item.learnRoute
+        setContent(Comp ? <Comp components={{ wrapper: mdxWrapper }} /> : null)
     }
 
     const ctx = useMemo(() => ({
