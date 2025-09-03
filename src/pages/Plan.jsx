@@ -11,10 +11,7 @@ import { TodosManagaeContext } from '../store/TodosManagaeContext.jsx';
 export default function Plan() {
     return (
         <section className={classes.plans}>
-            <TodosManagaeContext>
-                <Todos />
-            </TodosManagaeContext>
-
+            <Todos />
 
             <KnowledgeCardContext>
                 <KnowledgeCard />

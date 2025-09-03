@@ -1,5 +1,6 @@
+import { ICONS } from '../../../Data/icons.js';
 import classes from './DropArrow.module.css'
-import { ICONS } from '../../../Data/homePage.js';
+
 
 export default function DropArrow({ drop, onChange }) {
     const Icon = drop ? ICONS.arrowUp : ICONS.arrowDown;

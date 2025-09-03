@@ -1,0 +1,9 @@
+.fileContainer {
+    width: 42.0625rem;
+    height: 32.5rem;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    /* transition: "opacity 0.4s ease-in-out"; */
+    align-items: center;
+    vertical-align: middle !important;
+}

@@ -2,11 +2,12 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from './Navigation.module.css';
 
-import { ICONS } from "../../Data/homePage.js";
+import { ICONS } from "../../Data/icons.js";
 import { recapAsideContext } from "../../store/RecapAsideManageContext.jsx";
 
 import NavItems from "./NavItems.jsx";
 import NotionNav from "./NotionNav.jsx";
+
 
 const Logo = ICONS.logo;
 

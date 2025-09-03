@@ -1,6 +1,6 @@
-import classes from './SimpleIntro.module.css'
+import classes from './FutureItemsIntro.module.css'
 
-export default function SimpleIntro() {
+export default function FutureItemsIntro() {
     return (
         <div className={classes.intro}>
             <h3>此处显示详细信息</h3>

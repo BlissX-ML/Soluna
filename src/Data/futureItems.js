@@ -26,13 +26,3 @@ export const TODO_ITEMS = [
     { key: 'Computer_basis', title: '基础知识 - 研究生考研 408 学习', learnRoute: Basis408 },
     { key: 'Computer_DATA_Science', title: '数据分析相关内容 ......', learnRoute: DataScience },
 ]
-
-
-export const COMPLETE_ITEMS = [
-    { key: 'English_level4', title: '大学英语四级证书', learnRoute: null },
-    { key: 'English_level6', title: '大学英语六级证书', learnRoute: null },
-    { key: 'JLPT_N2', title: 'JLPT 日本语能力测试 - N2 证书', learnRoute: null },
-    { key: 'meta', title: 'Meta Front-end Developer 系列课程（共计 9 节）', learnRoute: null },
-    { key: 'lt75', title: 'LeetCode 75', learnRoute: null },
-    { key: 'lt30JS', title: '30 天 JavaScript 挑战', learnRoute: null },
-]

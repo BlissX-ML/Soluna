@@ -1,26 +1,40 @@
-import { COMPLETE_ITEMS, TODO_ITEMS } from '../../../Data/plans.js';
-import FiledSetContent from './FiledSetContent.jsx';
-import FiledSetTitle from './FiledSetTitle.jsx';
 import classes from './Todos.module.css';
-import TodosContent from './TodosContent.jsx';
+
+import { COMPLETE_ITEMS } from '../../../Data/completeItems.js';
+import { TODO_ITEMS } from '../../../Data/futureItems.js';
+import { TodosManagaeContext } from '../../../store/TodosManagaeContext.jsx';
+
+import Legend from './FieldSet/Legend.jsx';
+import Content from './FieldSet/Content.jsx';
+import CompleteItems from './CompleteItems/CompleteItems.jsx';
+import FutureItems from './FutureItems/FutureItems.jsx';
 
 
 export default function Todos() {
     return (
         <div className={classes.todos}>
-            <div className={classes.todosItems}>
-                <fieldset className={classes.future}>
-                    <FiledSetTitle>未来计划</FiledSetTitle>
-                    <FiledSetContent items={TODO_ITEMS} />
-                </fieldset>
+            <TodosManagaeContext key='future'>
+                <div className={classes.futureItems}>
+                    <fieldset>
+                        <Legend>未来计划</Legend>
+                        <Content items={TODO_ITEMS} slot='future' />
+                    </fieldset>
 
-                <fieldset className={classes.fulfilled}>
-                    <FiledSetTitle>已完成计划</FiledSetTitle>
-                    <FiledSetContent items={COMPLETE_ITEMS} />
-                </fieldset>
-            </div>
+                    <FutureItems slot='future' />
+                </div>
+            </TodosManagaeContext>
 
-            <TodosContent />
+
+            <TodosManagaeContext key='done'>
+                <div className={classes.completeItems} >
+                    <fieldset>
+                        <Legend>已完成计划</Legend>
+                        <Content items={COMPLETE_ITEMS} slot='done' />
+                    </fieldset>
+
+                    <CompleteItems slot='done' />
+                </div>
+            </TodosManagaeContext>
         </div>
     )
 }

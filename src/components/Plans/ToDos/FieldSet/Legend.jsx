@@ -1,6 +1,7 @@
-import { ICONS } from '../../../Data/homePage.js';
+import { ICONS } from "../../../../Data/icons.js";
 
-export default function FiledSetTitle({ children }) {
+
+export default function Legend({ children }) {
     const Hint = ICONS.hint;
 
     return (

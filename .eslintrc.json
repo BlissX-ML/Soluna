@@ -18,5 +18,15 @@
         "react/react-in-jsx-scope": "off",
         "no-unused-vars": "warn",
         "react/prop-types": "off"
-    }
+    },
+    "overrides": [
+        {
+            "files": [
+                "public/pdfjs/**"
+            ],
+            "rules": {
+                "no-undef": "off"
+            }
+        }
+    ]
 }

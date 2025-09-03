@@ -1,13 +1,13 @@
 import { useContext } from "react"
-import { TodosContext } from "../../../store/TodosManagaeContext.jsx"
-import classes from './FiledSetContent.module.css'
+import { TodosContext } from "../../../../store/TodosManagaeContext.jsx"
+import classes from './Content.module.css'
 
 
-export default function FiledSetContent({ items }) {
+export default function Content({ items, slot }) {
     const ctx = useContext(TodosContext)
+    const section = slot === 'future' ? ctx.future : ctx.done;
 
     const activeKey = ctx.activeItem?.key ?? '';
-    // console.log(activeKey)
 
     return (
         <div>
@@ -15,7 +15,7 @@ export default function FiledSetContent({ items }) {
                 {items.map(item => (
                     <li
                         key={item.key}
-                        onClick={() => ctx.changeItem(item)}
+                        onClick={() => section.click(item)}
                         className={`${classes.li} ${activeKey === item.key ? classes.active : ''}`}
                     >
                         {item.title}
